@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=3">
+	<script src="cordova.js"></script>
+	<script src="js/phaser.min.js"></script>
+	<script src = "juegoCabezon3.js"></script>
+	
+	<style>
+		body{
+			margin:0px;
+			padding:0px;
+		}
+	</style>
+</head>
+<body>
+<script>
+document.addEventListener('deviceready', onDeviceReady);
+function onDeviceReady(){
+
+AdMob.setOptions(
+{
+	adSize: 'SMART_BANNER',
+	isTesting: false
+});
+AdMob.createBanner({
+	adId: "ca-app-pub-9754389826617214/1160766886", // AdMob banner ID
+	position: AdMob.AD_POSITION.TOP_CENTER, // position
+	autoShow: true, // show it once it's ready
+	overlap: true, // overlap the game, so it won't steal space to canvas
+	isTesting: false// show a demo ad
+});
+
+console.log("banner creado");
+AdMob.prepareInterstitial({
+	adId:"ca-app-pub-9754389826617214/2637500081", // AdMob interstitial ID
+	autoShow: false // don't show now
+});
+
+console.log("intersticial creado");
+
+
+}
+</script>
+
+
+
+</body>
+</html>
